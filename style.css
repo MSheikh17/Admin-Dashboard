@@ -1,0 +1,228 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    font-size: 16px;
+    font-family: 'Ubuntu Condensed', sans-serif;
+    --side-color: #0ea5e9;
+    --text-primary: black;
+    --text-secondary: white;
+    --gray-1: #e5e7eb;
+    --gray-2: #d1d5db;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas: 'sidebar header''sidebar main-content';
+}
+
+header {
+    background-color: var(--gray-1);
+    grid-area: header;
+}
+
+.header-top {
+    display: grid;
+    grid-template-columns: 5fr 2fr;
+    margin-left: 2rem;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+}
+
+.user-settings>ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    margin-right: 2rem;
+}
+
+.user-settings>ul>li {
+    padding: 15px;
+}
+
+.search>input {
+    padding: 5px;
+    width: 80%;
+    border-radius: 15px;
+    margin-left: 10px;
+}
+
+.img-profile {
+    height: 40px;
+    width: 40px;
+}
+
+.header-bottom {
+    margin-left: 2rem;
+    display: grid;
+    grid-template-columns: 5fr 2fr;
+}
+
+.intro {
+    display: flex;
+    align-items: center;
+}
+
+.text-intro {
+    padding: 1.5rem;
+}
+
+.text-intro>p {
+    margin-bottom: 5px;
+}
+
+.options {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    margin-right: 2rem;
+}
+
+.intro>a>img {
+    height: 60px;
+    width: 60px;
+}
+
+button {
+    margin-left: 40px;
+    padding: 5px 20px;
+    border-radius: 10px;
+}
+
+.sidebar {
+    background-color: var(--side-color);
+    grid-area: sidebar;
+    color: white;
+    font-weight: 800;
+}
+
+.menu-items {
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.menu-items>ul>li {
+    list-style: none;
+    display: flex;
+    padding: 0.6rem;
+}
+
+.menu-items>ul>li>a {
+    margin-right: 20px;
+}
+
+.dashboard {
+    margin-bottom: 20px;
+}
+
+.menu-items>ul:first-child {
+    margin-bottom: 50px;
+}
+
+main {
+    background-color: var(--gray-2);
+    grid-area: main-content;
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr 300px;
+    grid-template-rows: min-content 1fr;
+    grid-template-areas: "projects announcements""projects trending";
+    padding: 2rem;
+}
+
+.projects>.cards {
+    grid-area: projects;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-rows: repeat(2, 1fr);
+    gap: 2rem;
+    padding-top: 10px;
+}
+
+.card {
+    background-color: white;
+    padding: 22px;
+    border-radius: 10px;
+    border-left: 10px solid #fcd34d;
+}
+
+.card>h3 {
+    margin-bottom: 10px;
+}
+
+.menu-options>ul>li {
+    list-style: none;
+    margin-left: 15px;
+}
+
+.menu-options>ul {
+    display: flex;
+    justify-content: end;
+    margin-top: 30px;
+}
+
+.announcements {
+    grid-area: announcements;
+}
+
+.card1 {
+    background-color: white;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.card1>div {
+    margin-bottom: 20px;
+}
+
+.card1>div>p {
+    /* font-size: 0.8rem; */
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden
+}
+
+.trending {
+    grid-area: trending;
+    background-color: white;
+    padding: 10px;
+    border-radius: 20px;
+    margin-top: 10px;
+}
+
+.profiles>div>img {
+    height: 40px;
+    width: 40px;
+}
+
+.profiles {
+    padding: 10px;
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+}
+
+.profiles>div {
+    display: flex;
+    padding: 10px;
+}
+
+.profile-text {
+    margin-left: 20px;
+}
